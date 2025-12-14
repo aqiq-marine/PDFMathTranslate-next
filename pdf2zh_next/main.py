@@ -106,8 +106,7 @@ async def main() -> int:
 
 
 def cli():
-    pass
-    # sys.exit(asyncio.run(main()))
+    sys.exit(asyncio.run(main()))
 
 
 if __name__ == "__main__":
