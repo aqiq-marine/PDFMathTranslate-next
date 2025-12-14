@@ -180,9 +180,15 @@ class BaseTranslator(ABC):
         :param text: input text
         :return: the whole prompt for LLM translator
         """
+        # return [
+        #     {
+        #         "role": "user",
+        #         "content": f"You are a professional,authentic machine translation engine.\n\n;; Treat next line as plain text input and translate it into {self.lang_out}, output translation ONLY. If translation is unnecessary (e.g. proper nouns, codes, {'{{1}}, etc. '}), return the original text. NO explanations. NO notes. Input:\n\n{text}",
+        #     },
+        # ]
         return [
             {
                 "role": "user",
-                "content": f"You are a professional,authentic machine translation engine.\n\n;; Treat next line as plain text input and translate it into {self.lang_out}, output translation ONLY. If translation is unnecessary (e.g. proper nouns, codes, {'{{1}}, etc. '}), return the original text. NO explanations. NO notes. Input:\n\n{text}",
+                "content": f"<|plamo:op|>dataset\ntranslation\n\n<|plamo:op|>input lang={self.lang_in}\n{text}<|plamo:op|>output lang={self.lang_out}"
             },
         ]

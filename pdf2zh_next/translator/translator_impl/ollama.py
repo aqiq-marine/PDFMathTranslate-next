@@ -49,6 +49,8 @@ class OllamaTranslator(BaseTranslator):
     def do_translate(self, text, rate_limit_params: dict = None) -> str:
         if (max_token := len(text) * 5) > self.options["num_predict"]:
             self.options["num_predict"] = max_token
+        print("YEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHH!")
+        print(self.prompt(text))
         response = self.client.chat(
             model=self.model,
             options=self.options,
