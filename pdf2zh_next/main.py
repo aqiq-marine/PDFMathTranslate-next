@@ -47,7 +47,6 @@ def find_all_files_in_directory(directory_path):
 
 
 async def main() -> int:
-    print("YEEEEEEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHH!")
     from rich.logging import RichHandler
 
     logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
@@ -55,6 +54,8 @@ async def main() -> int:
     settings = ConfigManager().initialize_config()
     if settings.basic.debug:
         logging.getLogger().setLevel(logging.DEBUG)
+
+    logger.info("YEEEEEEEEEEEEAAAAAAAAAAAAAAAAAHHHHHHHHHH!")
 
     # disable httpx, openai, httpcore, http11 logs
     logging.getLogger("httpx").setLevel("CRITICAL")
