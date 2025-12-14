@@ -104,6 +104,7 @@ async def main() -> int:
 
 
 def cli():
+    print("YEEEEEEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHH!")
     sys.exit(asyncio.run(main()))
 
 
