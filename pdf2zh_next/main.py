@@ -55,7 +55,6 @@ async def main() -> int:
     if settings.basic.debug:
         logging.getLogger().setLevel(logging.DEBUG)
 
-    logger.info("YEEEEEEEEEEEEAAAAAAAAAAAAAAAAAHHHHHHHHHH!")
 
     # disable httpx, openai, httpcore, http11 logs
     logging.getLogger("httpx").setLevel("CRITICAL")
@@ -106,6 +105,7 @@ async def main() -> int:
 
 
 def cli():
+    logger.info("YEEEEEEEEEEEEAAAAAAAAAAAAAAAAAHHHHHHHHHH!")
     sys.exit(asyncio.run(main()))
 
 
